@@ -47,7 +47,7 @@ const UltimaTerminal = () => {
       setTerminalHistory([...bootSequence, 'Type "help" for available commands', '']);
     }, 3000);
     return () => clearTimeout(bootTimer);
-  }, []);
+  }, [bootSequence]);
 
   useEffect(() => {
     const cursorTimer = setInterval(() => {
