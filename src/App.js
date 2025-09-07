@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { ChevronRight } from 'lucide-react';
 import './App.css';
 
@@ -10,7 +10,7 @@ const UltimaTerminal = () => {
   const [showCursor, setShowCursor] = useState(true);
   const terminalRef = useRef(null);
 
-  const bootSequence = [
+  const bootSequence = useMemo(() => [
     'INITIALIZING ULTIMA TERMINAL v4.0.1...',
     'LOADING APOCALYPSE DATABASE..................[✓]',
     'SCANNING GLOBAL THREAT ASSESSMENTS...........[✓]',
@@ -20,7 +20,7 @@ const UltimaTerminal = () => {
     '█ ULTIMA TERMINAL ONLINE █',
     'MONITORING THE END OF DAYS',
     ''
-  ];
+  ], []);
 
   const commands = {
     help: 'AVAILABLE COMMANDS:\n├── help       - Display this menu\n├── about      - System information\n├── theories   - End of world theories\n├── countdown  - Doomsday countdowns\n├── prophecies - Ancient prophecies\n├── scenarios  - Extinction scenarios\n├── clear      - Clear terminal',
