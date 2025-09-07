@@ -47,7 +47,7 @@ const UltimaTerminal = () => {
       setTerminalHistory([...bootSequence, 'Type "help" for available commands', '']);
     }, 3000);
     return () => clearTimeout(bootTimer);
-  }, [bootSequence]);
+  }, [bootSequence]); // Added bootSequence to dependency array
 
   useEffect(() => {
     const cursorTimer = setInterval(() => {
